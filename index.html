@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
+
+h1,
+p,
+a{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+}
+
+h1 {
+  font-size: 2.8em;
+  padding: 10px 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+
+.header {
+  width: 100%;
+  padding:60px 0;
+  text-align: center;
+  background: #002929;
+  color: white;
+}
+
+
+.btn-bgstroke {
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 300;
+  margin-top: 30px; 
+}
+
+.btn-bgstroke:hover {
+  background-color: white;
+  color: #33cccc;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <section class="header">
+        <h1>Backyard Academy</h2>
+       
+    </section>
+
+<h1>Bowling</h3>
+<table>
+  <tr>
+    <th>Players</th>
+    <th>Matches</th>
+    <th>Wickets</th>
+    <th>Runs</th>
+  </tr>
+ <tbody id="tbMatchesPlayed">
+ </tbody>
+</table>
+
+<h1>Batting</h3>
+<table>
+  <tr>
+    <th>Players</th>
+    <th>Matches</th>
+    <th>Runs</th>
+    <th>Wickets Loss</th>
+  </tr>
+ <tbody id="tbBatting">
+ </tbody>
+</table>
+
+</body>
+</html>
+
+<script>
+    var gamesPlayed  = [
+    { 
+        player: 'Anru',
+        matches: 1,
+        wickets:2,
+        bolingRuns:4,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:16,
+        battingWicketsLost:1,
+    },
+    { 
+        player: 'Carl',
+        matches: 0,
+        wickets:0,
+        bolingRuns:0,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:0,
+        battingWicketsLost:0,
+    },
+    {
+        player: 'Franco', 
+        matches: 1,
+        wickets:2,
+        bolingRuns:7,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:26,
+        battingWicketsLost:2,
+    },
+    { 
+        player: 'Tiaan',
+        matches: 0,
+        wickets:0,
+        bolingRuns:0,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:0,
+        battingWicketsLost:0,
+    },
+    { 
+        player: 'Ben',
+        matches: 0,
+        wickets:0,
+        bolingRuns:0,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:0,
+        battingWicketsLost:0,
+    },
+    {
+        player: 'Darren', 
+        matches: 1,
+        wickets:2,
+        bolingRuns:6,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:8,
+        battingWicketsLost:1,
+    },
+    { 
+        player: 'Duane',
+        matches: 1,
+        wickets:5,
+        bolingRuns:-20,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:10,
+        battingWicketsLost:1,
+    },
+    {
+        player: 'Ricardo',
+        matches: 0,
+        wickets:0,
+        bolingRuns:0,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:0,
+        battingWicketsLost:0,
+    },
+    { 
+        player: 'Liam', 
+        matches: 0,
+        wickets:0,
+        bolingRuns:0,
+        wicketAvg:0,
+        bowlingAvg:0,
+        //batting
+        battingRuns:0,
+        battingWicketsLost:0,
+    },
+    { 
+        player: 'Zian',
+         matches: 1,
+         wickets:1,
+         bolingRuns:13,
+         wicketAvg:0,
+         bowlingAvg:0,
+        //batting
+        battingRuns:2,
+        battingWicketsLost:3,
+    },
+    { 
+        player: 'Ruan',
+         matches: 1,
+         wickets:2,
+         bolingRuns:7,
+         wicketAvg:0,
+         bowlingAvg:0,
+        //batting
+        battingRuns:8,
+        battingWicketsLost:1,
+    },
+    { 
+        player: 'Morne',
+         matches: 1,
+         wickets:2,
+         bolingRuns:-2,
+         wicketAvg:0,
+         bowlingAvg:0,
+        //batting
+        battingRuns:1,
+        battingWicketsLost:3,
+    },
+    { 
+        player: 'Wittie',
+         matches: 0,
+         wickets:0,
+         bolingRuns:0,
+         wicketAvg:0,
+         bowlingAvg:0,
+        //batting
+        battingRuns:0,
+        battingWicketsLost:0,
+    },
+    { 
+        player: 'Tristen',
+         matches: 1,
+         wickets:2,
+         bolingRuns:2,
+         wicketAvg:0,
+         bowlingAvg:0,
+        //batting
+        battingRuns:10,
+        battingWicketsLost:2,
+    },
+  
+];
+gamesPlayed.forEach(element => {
+    $("#tbMatchesPlayed").append(`<tr>
+        <td>${element.player}</td>
+        <td>${element.matches}</td>
+        <td>${element.wickets}</td>
+        <td>${element.bolingRuns}</td>
+        </tr>`);
+    });
+
+    gamesPlayed.forEach(element => {
+    $("#tbBatting").append(`<tr>
+        <td>${element.player}</td>
+        <td>${element.matches}</td>
+        <td>${element.battingRuns}</td>
+        <td>${element.battingWicketsLost}</td>
+        </tr>`);
+    });
+</script>
