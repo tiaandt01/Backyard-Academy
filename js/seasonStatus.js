@@ -162,47 +162,47 @@ function loadStats(){
     var gamesPlayed  = [
         { 
             player: 'Anru',
-            matches: 1+1,
-            wickets:2+4,
-            bolingRuns:4-8,
+            matches: 1,
+            wickets:4,
+            bolingRuns:-8,
             wicketAvg:0,
             bowlingAvg:0,
             //batting
-            battingRuns:16+7,
-            battingWicketsLost:1+2,
+            battingRuns:+7,
+            battingWicketsLost:2,
         },
         { 
             player: 'Carl',
-            matches: 0+1,
-            wickets:0+1,
-            bolingRuns:0+9,
+            matches: 1,
+            wickets:1,
+            bolingRuns:9,
             wicketAvg:0,
             bowlingAvg:0,
             //batting
             battingRuns:-5,
-            battingWicketsLost:0+3,
+            battingWicketsLost:3,
         },
         {
             player: 'Franco', 
-            matches: 1+1,
-            wickets:2+2,
-            bolingRuns:7+4,
+            matches: 1,
+            wickets:2,
+            bolingRuns:4,
             wicketAvg:0,
             bowlingAvg:0,
             //batting
-            battingRuns:26+22,
-            battingWicketsLost:2+2,
+            battingRuns:22,
+            battingWicketsLost:2,
         },
         { 
             player: 'Tiaan',
-            matches: 0+1,
-            wickets:0+1,
-            bolingRuns:0+10,
+            matches: 1,
+            wickets:1,
+            bolingRuns:10,
             wicketAvg:0,
             bowlingAvg:0,
             //batting
             battingRuns:9,
-            battingWicketsLost:0+1,
+            battingWicketsLost:1,
         },
         { 
             player: 'Ben',
@@ -217,35 +217,35 @@ function loadStats(){
         },
         {
             player: 'Darren', 
-            matches: 1+1,
-            wickets:2+1,
-            bolingRuns:6+12,
+            matches: 1,
+            wickets:1,
+            bolingRuns:12,
             wicketAvg:0,
             bowlingAvg:0,
             //batting
-            battingRuns:8+1,
-            battingWicketsLost:1+3,
+            battingRuns:1,
+            battingWicketsLost:3,
         },
         { 
             player: 'Duane',
-            matches: 1,
-            wickets:5,
-            bolingRuns:-20,
+            matches: 0,
+            wickets:0,
+            bolingRuns:0,
             wicketAvg:0,
             bowlingAvg:0,
             //batting
-            battingRuns:10,
-            battingWicketsLost:1,
+            battingRuns:0,
+            battingWicketsLost:0,
         },
         {
             player: 'Ricardo',
-            matches: 0+1,
-            wickets:0+2,
-            bolingRuns:0+3,
+            matches: 1,
+            wickets:2,
+            bolingRuns:3,
             wicketAvg:0,
             bowlingAvg:0,
             //batting
-            battingRuns:0+21,
+            battingRuns:21,
             battingWicketsLost:0,
         },
         { 
@@ -261,36 +261,36 @@ function loadStats(){
         },
         { 
             player: 'Zian',
-             matches: 1,
-             wickets:1,
-             bolingRuns:13,
+             matches: 0,
+             wickets:0,
+             bolingRuns:0,
              wicketAvg:0,
              bowlingAvg:0,
             //batting
-            battingRuns:2,
-            battingWicketsLost:3,
+            battingRuns:0,
+            battingWicketsLost:0,
         },
         { 
             player: 'Ruan',
-             matches: 1,
-             wickets:2,
-             bolingRuns:7,
+             matches: 0,
+             wickets:0,
+             bolingRuns:0,
              wicketAvg:0,
              bowlingAvg:0,
             //batting
-            battingRuns:8,
-            battingWicketsLost:1,
+            battingRuns:0,
+            battingWicketsLost:0,
         },
         { 
             player: 'Morne',
-             matches: 1+1,
-             wickets:2+1,
-             bolingRuns:-2+7,
+             matches: 1,
+             wickets:1,
+             bolingRuns:-7,
              wicketAvg:0,
              bowlingAvg:0,
             //batting
-            battingRuns:1+3,
-            battingWicketsLost:3+2,
+            battingRuns:3,
+            battingWicketsLost:2,
         },
         { 
             player: 'Wittie',
@@ -305,14 +305,14 @@ function loadStats(){
         },
         { 
             player: 'Tristen',
-             matches: 1,
-             wickets:2,
-             bolingRuns:2,
+             matches: 0,
+             wickets:0,
+             bolingRuns:0,
              wicketAvg:0,
              bowlingAvg:0,
             //batting
-            battingRuns:10,
-            battingWicketsLost:2,
+            battingRuns:0,
+            battingWicketsLost:0,
         },
         { 
             player: 'Xavier',
@@ -325,10 +325,30 @@ function loadStats(){
             battingRuns:8,
             battingWicketsLost:1,
         },
-      
+        { 
+            player: 'Quien',
+             matches: 0,
+             wickets:0,
+             bolingRuns:0,
+             wicketAvg:0,
+             bowlingAvg:0,
+            //batting
+            battingRuns:0,
+            battingWicketsLost:0,
+        },
     ];
+    var bowlingMvp = 0;
+    var bowlingMvpArray = [];
     gamesPlayed.forEach(element => {
-        var bowlingRunsAvg = (element.bolingRuns / element.matches) ;
+        var bowlingRunsAvg = (element.bolingRuns / element.matches);
+        if(bowlingRunsAvg>bowlingMvp){
+            bowlingMvpArray = [];
+            bowlingMvp = bowlingRunsAvg;
+            // bowlingMvpArray.append({
+            //     player:
+            //     matches
+            // });
+        }
         $("#tbMatchesPlayed").append(`<tr>
             <td>${element.player}</td>
             <td>${element.matches}</td>
@@ -337,15 +357,28 @@ function loadStats(){
             <td>${bowlingRunsAvg}</td>
             </tr>`);
         });
-    
+        var battingMvp = 0;
         gamesPlayed.forEach(element => {
             var battingAvg = (element.battingRuns / element.matches) ;
+            if(battingAvg>battingMvp){
+                battingMvp = battingAvg;
+            }
         $("#tbBatting").append(`<tr>
             <td>${element.player}</td>
             <td>${element.matches}</td>
             <td>${element.battingRuns}</td>
             <td>${element.battingWicketsLost}</td>
             <td>${battingAvg}</td>
+            </tr>`);
+        });
+
+        var mvpArray = [{player:'Franco',}];
+        
+        mvpArray.forEach(element => {
+        $("#tbmvp").append(`<tr>
+            <td>${element.player}</td>
+            <td>${element.bollowingAvg}</td>
+            <td>${element.battingAvg}</td>
             </tr>`);
         });
 }

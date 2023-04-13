@@ -32,6 +32,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Bowling</a></li>
                          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#batting">Batting</a></li>
+                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gamesStats">Game Stats</a></li>
                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li> -->
                     </ul>
                 </div>
@@ -96,19 +97,73 @@
                       
                      <tbody id="tbBatting">
                      </tbody>
+                    </table>
                 </div>
               
                 
             </div>
         </section>
 
+            <section class="page-section" id="gamesStats">
+                <div class="container">
+                    <!-- Portfolio Section Heading-->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Games Stats</h2>
+                    <div class="divider-custom">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Game Number</th>
+                                    <th>Played Against</th>
+                                    <th>Date</th>
+                                    <th>skins</th>
+                                    <th>Result</th>
+                                    <th>Points</th>
+                                    
+                                  </tr>
+                            </thead>
+                          
+                         <tbody id="tbGamesPlayed">
+                         </tbody>
+                        </table>
+                    </div>
+                  
+                    
+                </div>
+            </section>
+
+            <!-- <section class="page-section" id="mvp">
+                <div class="container">
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Mvp</h2>
+                    <div class="divider-custom">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Players</th>
+                                    <th>Batting Average</th>
+                                    <th>Bowling Average</th>
+                                    
+                                  </tr>
+                            </thead>
+                          
+                         <tbody id="tbmvp">
+                         </tbody>
+                        </table>
+                    </div>
+                  
+                    
+                </div>
+            </section> -->
+       
       
+
       
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="js/seasonStatus.js"></script>
+        <script src="js/gameStatus.js"></script>
+        
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
@@ -123,5 +178,6 @@
 <script>
    $( document ).ready(function() {
     loadStats();
+    loadGameStats()
 });
 </script>
