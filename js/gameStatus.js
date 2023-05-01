@@ -9,7 +9,23 @@ function loadGameStats(){
             skins: 2,
             matchResult: 'Won',
             matchPoints: 6
-        }
+        },
+        {
+            gameNumber: 2,
+            playedAgainst: 'Win or booze',
+            date : '04/24/2023',
+            skins: 2,
+            matchResult: 'Won',
+            matchPoints: 6
+        },
+        {
+            gameNumber: 3,
+            playedAgainst: 'Win or booze',
+            date : '04/27/2023',
+            skins: 0,
+            matchResult: 'Lost',
+            matchPoints: 0
+        },
     ]
 
 
