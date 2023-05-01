@@ -20,7 +20,7 @@ function loadGameStats(){
         },
         {
             gameNumber: 3,
-            playedAgainst: 'Win or booze',
+            playedAgainst: '123 fore skins',
             date : '04/27/2023',
             skins: 0,
             matchResult: 'Lost',
