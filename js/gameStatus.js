@@ -32,7 +32,7 @@ function loadGameStats(){
             date : '05/02/2023',
             skins: 1,
             matchResult: 'Lost',
-            matchPoints: 0
+            matchPoints: 2
         },
         {
             gameNumber: 5,
@@ -40,7 +40,7 @@ function loadGameStats(){
             date : '05/15/2023',
             skins: 1,
             matchResult: 'Lost',
-            matchPoints: 0
+            matchPoints: 2
         },
         {
             gameNumber: 6,
@@ -48,7 +48,7 @@ function loadGameStats(){
             date : '05/16/2023',
             skins: 2,
             matchResult: 'Won',
-            matchPoints: 0
+            matchPoints: 6
         },
     ]
 
